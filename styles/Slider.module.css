@@ -8,8 +8,8 @@
 .slider {
   position: relative;
   width: 100%;
-  height: 300px; /* ارتفاع ثابت برای اسلایدر */
-  overflow: hidden; /* مخفی کردن اسلایدهای اضافی */
+  height: 300px;
+  overflow: hidden;
 }
 
 .slides {
@@ -24,35 +24,36 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0; /* به‌طور پیش‌فرض مخفی */
-  transition: opacity 0.5s ease-in-out; /* انتقال نرم */
-  display: none; /* مخفی کردن اسلایدهای غیرفعال */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: none;
 }
 
 .slide.active {
-  opacity: 1; /* نمایش اسلاید فعال */
-  display: block; /* اطمینان از نمایش */
+  opacity: 1;
+  display: block;
 }
 
 .slideImage {
   width: 100%;
-  height: 100%; /* پر کردن اسلاید */
-  object-fit: cover; /* جلوگیری از اعوجاج */
+  height: 100%;
+  object-fit: cover;
   border-radius: 0.5rem;
-  display: block; /* اطمینان از نمایش تصویر */
+  display: block;
 }
 
 .arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 150px; /* وسط تصویر (300px / 2) */
+  transform: translateY(-50%); /* تنظیم دقیق برای وسط دکمه */
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
   padding: 8px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 20;
   font-size: 18px;
+  pointer-events: auto;
 }
 
 .arrowLeft {
@@ -68,10 +69,13 @@
   justify-content: center;
   gap: 0.5rem;
   margin-top: 0.8rem;
+  z-index: 10;
 }
 
 .previewSlide {
-  flex: 0 0 auto; /* جلوگیری از تغییر اندازه */
+  flex: 0 0 auto;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .previewImage {
@@ -79,7 +83,6 @@
   height: 60px;
   object-fit: cover;
   border-radius: 0.5rem;
-  cursor: pointer;
   border: 2px solid transparent;
   transition: border 0.3s;
   display: block;
@@ -97,6 +100,10 @@
   .slider {
     height: 200px;
   }
+
+  .arrow {
+    top: 100px; /* وسط تصویر در تبلت (200px / 2) */
+  }
 }
 
 @media (max-width: 768px) {
@@ -111,5 +118,9 @@
 
   .slider {
     height: 180px;
+  }
+
+  .arrow {
+    top: 90px; /* وسط تصویر در موبایل (180px / 2) */
   }
 }

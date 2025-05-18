@@ -13,18 +13,18 @@ export default function Slider({ images, sliderId }: SliderProps) {
   const total = images.length;
 
   const nextSlide = () => {
+    console.log(`Next button clicked! Current: ${current}, Next: ${(current + 1) % total}`); // دیباگ
     setCurrent((current + 1) % total);
-    console.log(`Next slide: ${(current + 1) % total}, Total: ${total}`); // دیباگ
   };
 
   const prevSlide = () => {
+    console.log(`Previous button clicked! Current: ${current}, Previous: ${(current - 1 + total) % total}`); // دیباگ
     setCurrent((current - 1 + total) % total);
-    console.log(`Previous slide: ${(current - 1 + total) % total}, Total: ${total}`); // دیباگ
   };
 
   const goToSlide = (index: number) => {
+    console.log(`Preview clicked! Go to slide: ${index}, Total: ${total}`); // دیباگ
     setCurrent(index);
-    console.log(`Go to slide: ${index}, Total: ${total}`); // دیباگ
   };
 
   if (!images || images.length === 0) {
@@ -46,7 +46,7 @@ export default function Slider({ images, sliderId }: SliderProps) {
                 width={400}
                 height={300}
                 className={styles.slideImage}
-                priority={index === 0} // اولویت برای اسلاید اول
+                priority={index === 0}
                 onError={() => console.error(`Failed to load main image: ${src}`)}
                 onLoad={() => console.log(`Loaded main image: ${src}`)}
               />
@@ -57,12 +57,14 @@ export default function Slider({ images, sliderId }: SliderProps) {
       <button
         className={`${styles.arrow} ${styles.arrowLeft}`}
         onClick={prevSlide}
+        aria-label="Previous slide"
       >
         ❮
       </button>
       <button
         className={`${styles.arrow} ${styles.arrowRight}`}
         onClick={nextSlide}
+        aria-label="Next slide"
       >
         ❯
       </button>
