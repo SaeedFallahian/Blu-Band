@@ -1,0 +1,115 @@
+.sliderContainer {
+  flex: 1;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 300px; /* ارتفاع ثابت برای اسلایدر */
+  overflow: hidden; /* مخفی کردن اسلایدهای اضافی */
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* به‌طور پیش‌فرض مخفی */
+  transition: opacity 0.5s ease-in-out; /* انتقال نرم */
+  display: none; /* مخفی کردن اسلایدهای غیرفعال */
+}
+
+.slide.active {
+  opacity: 1; /* نمایش اسلاید فعال */
+  display: block; /* اطمینان از نمایش */
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%; /* پر کردن اسلاید */
+  object-fit: cover; /* جلوگیری از اعوجاج */
+  border-radius: 0.5rem;
+  display: block; /* اطمینان از نمایش تصویر */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+}
+
+.arrowLeft {
+  left: 5px;
+}
+
+.arrowRight {
+  right: 5px;
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.previewSlide {
+  flex: 0 0 auto; /* جلوگیری از تغییر اندازه */
+}
+
+.previewImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+  display: block;
+}
+
+.previewImage.active {
+  border: 2px solid #38bdf8;
+}
+
+@media (max-width: 1024px) {
+  .sliderContainer {
+    max-width: 300px;
+  }
+
+  .slider {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sliderContainer {
+    max-width: 300px;
+  }
+
+  .previewImage {
+    width: 50px;
+    height: 50px;
+  }
+
+  .slider {
+    height: 180px;
+  }
+}

@@ -1,0 +1,85 @@
+.productDetails {
+  margin-bottom: 5rem; /* فاصله عمودی بین محصولات */
+  position: relative;
+  padding-bottom: 2.5rem; /* فضای تنفس */
+}
+
+.productDetails:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    transparent 0%, /* محو شدن در لبه چپ */
+    #bfdbfe 20%, /* کم‌رنگ */
+    #2563eb 50%, /* پررنگ در مرکز */
+    #bfdbfe 80%, /* کم‌رنگ */
+    transparent 100% /* محو شدن در لبه راست */
+  );
+  border-radius: 2px;
+}
+
+.odd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.even {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-direction: row-reverse;
+}
+
+.detailsText {
+  flex: 1;
+  text-align: right;
+}
+
+.detailsText h3 {
+  color: #1f2937;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.detailsText p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  color: #38bdf8;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  .odd,
+  .even {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .detailsText {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .detailsText h3 {
+    font-size: 1.2rem;
+  }
+
+  .detailsText p {
+    font-size: 0.85rem;
+  }
+}

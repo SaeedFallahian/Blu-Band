@@ -1,0 +1,64 @@
+.section {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.section h2 {
+  color: #1f2937;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.chef {
+  position: relative;
+  background-color: #e0f2fe;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+
+.chefImage {
+  position: absolute;
+  top: -2.5rem;
+  left: 1.5rem;
+  width: 120px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chef ul {
+  list-style: none;
+  color: #4b5563;
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.chef ul li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .section h2 {
+    font-size: 1.8rem;
+  }
+
+  .chefImage {
+    width: 100px;
+    top: -2rem;
+    left: 1rem;
+  }
+
+  .chef ul li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,123 @@
+.faqSection {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%);
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.faqSection h2 {
+  color: #1e3a8a;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.faqSection h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #38bdf8;
+  border-radius: 2px;
+}
+
+.faqItem {
+  margin-bottom: 1.2rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faqItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faqQuestion {
+  background-color: #38bdf8;
+  color: #ffffff;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.faqQuestion:hover {
+  background-color: #0ea5e9;
+}
+
+.faqQuestion h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.toggleIcon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #f8fafc;
+  padding: 0 1rem;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faqAnswer p {
+  color: #1f2937;
+  font-size: 0.95rem;
+  padding: 1rem 0;
+}
+
+.active .faqAnswer {
+  max-height: 200px;
+  padding: 1rem;
+}
+
+.active .toggleIcon {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .faqSection h2 {
+    font-size: 1.8rem;
+  }
+
+  .faqItem:hover {
+    transform: none;
+  }
+
+  .faqQuestion h3 {
+    font-size: 1rem;
+  }
+
+  .faqAnswer p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faqSection h2 {
+    font-size: 1.5rem;
+  }
+
+  .faqSection h2::after {
+    width: 60px;
+  }
+
+  .faqQuestion h3 {
+    font-size: 0.9rem;
+  }
+}

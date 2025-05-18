@@ -1,0 +1,89 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.navToggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navList li a:hover {
+  color: #38bdf8;
+}
+
+.btnOrder {
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.btnOrder:hover {
+  background-color: #111827;
+}
+
+@media (max-width: 768px) {
+  .navToggle {
+    display: block;
+  }
+
+  .navList {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .navList.active {
+    display: flex;
+  }
+
+  .navList li {
+    margin: 10px 0;
+  }
+
+  .btnOrder {
+    display: none;
+  }
+}
